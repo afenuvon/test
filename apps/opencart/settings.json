@@ -1,0 +1,38 @@
+[
+  {
+    "type": "multi-input",
+    "id": "opencart-details",
+    "title": "OpenCart details",
+    "content": "Enter the details of your OpenCart website.",
+    "value": [
+      {
+        "type": "text",
+        "id": "opencart-details-url",
+        "title": "Website URL"
+      },
+      {
+        "type": "text",
+        "id": "opencart-details-user",
+        "title": "Username"
+      },
+      {
+        "type": "password",
+        "id": "opencart-details-api-key",
+        "title": "API key"
+      },
+      {
+        "type": "text",
+        "id": "opencart-details-currency",
+        "title": "Currency"
+      }
+    ]
+  },
+  {
+    "type": "button",
+    "id": "opencart-sync",
+    "title": "Import customers",
+    "content": "Sync customers with Support Board. Only new customers will be imported.",
+    "button-text": "Start importing",
+    "button-url": "#"
+  }
+]
