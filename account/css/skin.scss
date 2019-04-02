@@ -1,0 +1,1000 @@
+/*
+
+===================================================================
+CLOUD MAIN CSS FILE
+===================================================================
+
+*/
+
+$transition: all 0.4s;
+$color-blue: #028be5;
+$color-dark-blue: rgb(0, 76, 125);
+$color-black: rgb(36, 39, 42);
+$color-gray: rgb(86, 96, 105);
+$color-red: rgb(202, 52, 52);
+$color-green: rgb(26, 146, 96);
+$color-yellow: rgb(246, 158, 0);
+$background-black: #3b454d;
+$background-gray: rgb(245, 247, 250);
+$background-color-2: rgba(39, 156, 255, 0.08);
+$background-color-red: rgba(202, 52, 52, 0.1);
+$background-color-green: #e6f1ec;
+$background-color-yellow: rgb(242, 227, 124);
+$border-color: rgb(212, 212, 212);
+$white: #fff;
+$box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.05);
+
+/*
+     
+# GLOBAL
+==========================================================
+
+*/
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+body {
+    font-family: "Support Board Font", "Helvetica Neue", "Apple Color Emoji", Helvetica, Arial, sans-serif;
+    min-height: 0;
+}
+
+body.on-load * {
+    transition: none !important;
+}
+
+.disclaimer {
+    text-align: center;
+    max-width: 600px;
+    display: block;
+    margin: 0 auto 30px auto;
+    font-size: 13px;
+    line-height: 25px;
+    color: #707070;
+
+    a {
+        color: $color-blue;
+        text-decoration: none;
+    }
+}
+
+.sb-admin {
+    left: 0;
+    padding: 0;
+    width: 100%;
+    background: $white;
+}
+
+hr {
+    border: none;
+    opacity: 0;
+    height: 30px;
+    margin: 0;
+}
+
+hr.hr-border {
+    border-bottom: 1px solid #d4d4d4;
+    background: #FFF;
+    opacity: 1;
+    margin-bottom: 15px;
+}
+
+.sb-lightbox {
+    height: calc(100% - 100px);
+}
+
+.sb-content .banner {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    padding: 30px;
+    background-color: $background-gray;
+
+    img {
+        width: 170px;
+        position: absolute;
+        left: 0;
+    }
+
+    h2 {
+        margin: 0 0 5px 0;
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    p {
+        margin: 5px 0 0 0 !important;
+    }
+
+    > i {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+
+        &:before {
+            font-size: 13px;
+        }
+    }
+
+    input {
+        background: $white;
+    }
+
+    a:not(.sb-btn) {
+        cursor: pointer;
+        font-weight: 500;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    > div {
+        padding-top: 30px;
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    &.banner-img {
+        padding: 0 0 0 210px;
+        height: 140px;
+        background: none;
+        border: none;
+
+        h2 {
+            font-size: 25px;
+            margin: 15px 0 25px 0;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 30px;
+        }
+
+        > i {
+            right: 0;
+            top: 0;
+        }
+    }
+
+    &.banner-error {
+        background: $background-color-red;
+
+        h2, p, i, a {
+            color: $color-red;
+        }
+
+        .sb-icon-close:hover {
+            border-color: $color-red;
+            color: $color-red;
+            background: $background-color-red;
+        }
+    }
+
+    &.banner-success {
+        background: $background-color-green;
+
+        h2, p, i, a {
+            color: $color-green;
+        }
+
+        .sb-icon-close:hover {
+            border-color: $color-green;
+            color: $color-green;
+            background: $background-color-green;
+        }
+    }
+}
+
+/*
+     
+# REGISTRATION AND LOGIN
+==========================================================
+
+*/
+
+.sb-admin-box {
+    .sb-top-bar img {
+        margin-bottom: 20px;
+    }
+
+    .sb-bottom {
+        justify-content: flex-start;
+    }
+
+    .sb-bottom div + div {
+        margin-left: 15px;
+    }
+
+    .sb-bottom div + .sb-btn-login-box, .sb-bottom div + .btn-registration-box, .btn-cancel-reset-password {
+        margin-left: 5px;
+        color: $color-blue;
+        cursor: pointer;
+    }
+
+    .sb-top-bar img {
+        max-width: 335px;
+    }
+
+    .btn-forgot-password {
+        margin: 5px 0 0 0 !important;
+        text-align: right;
+        font-size: 13px;
+        cursor: pointer;
+    }
+
+    .btn-forgot-password:hover {
+        color: $color-red;
+        transition: $transition;
+    }
+}
+
+.sb-registration-box {
+
+    .loading-screen {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $white;
+        border-radius: 6px;
+        animation: sb-fade-animation 1s;
+
+        p {
+            margin: 0;
+            font-size: 15px;
+            line-height: 25px;
+            color: $color-gray;
+        }
+
+        i {
+            width: 30px;
+            height: 30px;
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.sb-errors-area {
+    color: $color-red;
+    margin: 30px 0 0 0;
+    font-size: 15px;
+    line-height: 25px;
+
+    &:empty {
+        display: none;
+    }
+}
+
+.sb-registration-box:not(.active), .sb-login-box:not(.active), .sb-reset-password-box:not(.active), .sb-reset-password-box-2:not(.active), .loading-screen:not(.active) {
+    display: none !important;
+}
+
+/*
+     
+# ACCOUNT
+==========================================================
+
+*/
+
+.sb-account-box .sb-top-bar, .sb-super-box .sb-admin .sb-top-bar {
+    margin: 0;
+    padding: 0 15px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $border-color;
+
+    h2 {
+        display: flex;
+        align-items: center;
+        margin-right: 30px;
+
+        img {
+            height: 35px;
+            margin: 0 15px 0 0;
+        }
+    }
+}
+
+.sb-account-box {
+
+    > .sb-tab {
+        height: calc(100% - 70px);
+    }
+}
+
+.sb-tab .sb-content {
+    padding: 20px 15px 30px 20px;
+
+    > div {
+        max-width: 1000px;
+
+        &.sb-loading:before {
+            left: 10px;
+            top: 10px;
+        }
+    }
+
+    textarea[readonly], input[readonly] {
+        background: $background-gray;
+    }
+
+    h2 {
+        font-weight: 600;
+        font-size: 17px;
+        margin: 0;
+        color: #566069;
+
+        + p {
+            margin-bottom: 30px;
+        }
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 23px;
+        letter-spacing: 0.3px;
+        margin: 5px 0 0 0;
+        color: #788692;
+
+        a {
+            color: #788692;
+        }
+    }
+
+    .addons-title {
+        border-bottom: 1px solid #dddddd;
+        padding-bottom: 20px;
+        margin: 60px 0 20px 0;
+    }
+
+    #tab-installation {
+        .addons-title {
+            border-bottom: none;
+            padding-bottom: 0;
+            border-top: 1px solid #dddddd;
+            padding-top: 20px;
+            margin: 30px 0 10px 0;
+
+            &.first-title {
+                border-top: none;
+                padding-top: 0;
+                margin-top: 0;
+            }
+        }
+    }
+
+    .addons-title.first-title {
+        margin-top: 0;
+    }
+
+    #chart-usage {
+        margin-top: 30px;
+    }
+
+    .sb-table td {
+        a {
+            line-height: 30px;
+            font-weight: 500;
+            display: block;
+        }
+
+        &:first-child {
+            border-top: 1px solid #d4d4d4;
+        }
+    }
+
+    #add-credits {
+        margin-top: 20px;
+
+        select {
+            background: $white;
+            min-height: 52px;
+        }
+
+        &.sb-loading select {
+            color: $white;
+        }
+    }
+
+    #credits-recharge {
+        margin-top: 20px;
+
+        input {
+            width: 52px;
+            height: 52px;
+
+            &:before {
+                line-height: 52px;
+                font-size: 20px;
+            }
+        }
+    }
+
+    .maso-box-credits .box-black {
+        min-width: 260px;
+    }
+
+    .box-membership .box-black {
+        width: 50%;
+    }
+}
+
+.box-split, .box-maso {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-maso {
+    justify-content: flex-start;
+    margin: 0 -10px;
+
+    > div {
+        margin: 0 10px;
+    }
+}
+
+.sb-tab .sb-content .box-black {
+    background: $background-black;
+    padding: 20px 30px;
+    border-radius: 4px;
+
+    h2 {
+        font-size: 17px;
+        line-height: 20px;
+        letter-spacing: .3px;
+        color: $white;
+        margin: 0 0 15px 0;
+        font-weight: 400;
+    }
+
+    div {
+        font-size: 25px;
+        font-weight: 500;
+        color: $white;
+
+        span + span {
+            font-size: 12px;
+            letter-spacing: .3px;
+            margin-left: 2px;
+        }
+    }
+
+    > div {
+        display: flex;
+        align-items: baseline;
+
+        > div + div {
+            margin-left: 15px;
+        }
+    }
+}
+
+.sb-btn-text {
+    font-size: 15px;
+}
+
+.sb-input .sb-btn {
+    background-color: #fff;
+    color: #566069;
+    border: 1px solid #ccd2d5;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
+    padding: 0 10px;
+    white-space: nowrap;
+    border-radius: 4px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 15px;
+
+    &:hover {
+        color: $white;
+        border-color: $color-blue;
+        background-color: $color-blue;
+    }
+
+    &.sb-loading {
+        width: 15px;
+        background: #FFF !important;
+        border-color: #ccd2d5;
+        cursor: default;
+
+        &:before {
+            color: rgb(38, 67, 92);
+        }
+    }
+}
+
+.sb-type-input-button input {
+    min-width: 0;
+    flex-shrink: 10;
+}
+
+.animation-button {
+    animation: pulse 0.5s ease-in-out infinite both;
+}
+
+#tab-profile {
+    > .sb-flex {
+        justify-content: space-between;
+
+        #delete-account:hover {
+            color: rgb(202, 52, 52);
+        }
+    }
+}
+
+.sb-direct-link input {
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+/*
+     
+# MEMBERSHIP
+==========================================================
+
+*/
+
+.plans-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    color: #3b454d;
+
+    > div {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 20px;
+        transition: all .3s;
+        cursor: pointer;
+        display: none;
+
+        &.sb-visible {
+            display: block;
+        }
+
+        &:hover, &.sb-active {
+            border-color: #228be5;
+            box-shadow: 0 0 5px rgba(39, 156, 255, 0.2);
+
+            h3, h4, p {
+                color: #228be5;
+            }
+        }
+    }
+
+    h3, h4, p {
+        transition: all .3s;
+    }
+
+    h3 {
+        margin: 0 0 15px 0;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    h4 {
+        margin: 0 0 15px 0;
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 35px;
+    }
+
+    p {
+        margin: 0;
+        font-size: 15px;
+        color: #6c7984;
+        font-weight: 400;
+    }
+}
+
+.plans-box-menu {
+    margin-bottom: 30px;
+}
+
+#tab-invoices {
+    .sb-table {
+        td {
+            display: flex;
+            align-items: center;
+
+            i {
+                font-size: 20px;
+                margin-right: 15px;
+            }
+        }
+
+        tr:not(:last-child) td {
+            border-bottom: none;
+        }
+    }
+}
+
+.sb-invoice-row {
+    display: flex;
+    align-items: center;
+
+    span {
+        padding-right: 15px;
+
+        &:first-child, & + span + span {
+            min-width: 150px;
+        }
+    }
+}
+
+.sb-plan-active {
+    cursor: default !important;
+    color: $color-black;
+    border-color: $color-green !important;
+    box-shadow: none !important;
+    position: relative;
+
+    * {
+        color: $color-green !important;
+    }
+
+    &:before {
+        content: "\77";
+        font-family: "Support Board Icons" !important;
+        position: absolute;
+        z-index: 2;
+        right: 15px;
+        color: $color-green;
+        font-size: 20px;
+        line-height: 15px;
+    }
+}
+
+/*
+     
+# SUPER ADMIN
+==========================================================
+
+*/
+
+#tab-customers {
+    max-width: none;
+}
+
+#tab-settings {
+    .sb-setting-content h2 {
+        font-size: 16px;
+    }
+}
+
+#tab-emails, #tab-settings {
+    .sb-setting + .sb-setting {
+        margin-top: 30px;
+    }
+}
+
+#add-membership, #save-membership-plans {
+    overflow: hidden;
+}
+
+.table-customers {
+    table-layout: auto;
+
+    td:first-child {
+        max-width: 60px;
+    }
+
+    tr:last-child td {
+        border-bottom: none;
+    }
+
+    td {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+td[data-id="name"], th[data-field="name"] {
+    max-width: 200px;
+}
+
+.sb-profile-edit-box {
+    height: calc(100% - 50px);
+    max-width: 1000px;
+
+    .sb-sales-box, .sb-volume-box > div {
+        font-size: 13px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .sb-readonly-box {
+        margin-top: 15px;
+    }
+
+    input[readonly] {
+        background: none;
+        color: #6c6f72;
+    }
+
+    .sb-top-bar .sb-profile {
+        padding-left: 0;
+    }
+
+    .sb-input > span {
+        width: 200px;
+        min-width: 200px;
+    }
+
+    .sb-delete-box {
+        padding: 10px;
+        border: 1px solid $color-red;
+        border-radius: 3px;
+        margin-top: 30px;
+
+        > div {
+            display: flex;
+            align-items: center;
+        }
+
+        input {
+            border: 1px solid $color-red;
+            border-radius: 3px;
+            padding: 5px 10px;
+        }
+
+        .sb-btn-text {
+            margin-left: 30px;
+            color: $color-red;
+        }
+
+        > p {
+            font-size: 12px;
+            line-height: 15px;
+            margin-top: 15px;
+            color: $color-red;
+        }
+    }
+}
+
+.sb-super-box {
+    > div > .sb-tab {
+        height: calc(100% - 80px);
+    }
+
+    .input input + textarea {
+        margin-top: 15px;
+    }
+}
+
+[data-type="repeater"] .sb-btn {
+    overflow: hidden;
+}
+
+#membership-plans {
+    > div {
+        margin-bottom: 40px;
+        position: relative;
+
+        > div {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        > i {
+            position: absolute;
+            right: -25px;
+            top: 16px;
+            font-size: 10px;
+            cursor: pointer;
+            opacity: 0;
+            color: #bb0b0b;
+        }
+
+        &:hover {
+            i {
+                opacity: 1;
+            }
+        }
+
+        h5 {
+            margin: 0 15px 0 0;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        input {
+            width: 100%;
+
+            &[type=number] {
+                width: 30%;
+                min-width: 100px;
+            }
+
+            & + h5 {
+                margin-left: 15px;
+            }
+        }
+    }
+}
+
+.super-white-label {
+    margin-top: 60px;
+
+    .sb-input {
+        justify-content: flex-start;
+        margin-bottom: 30px;
+
+        h5 {
+            margin-right: 30px;
+            font-size: 14px;
+        }
+    }
+
+    input {
+        display: inline-block;
+        width: auto;
+    }
+}
+
+/*
+     
+# RTL
+==========================================================
+
+*/
+
+.sb-rtl {
+    .sb-admin {
+        padding-left: 0;
+        padding-right: 15px;
+    }
+
+    .sb-account-box .sb-top-bar, .sb-super-box .sb-admin .sb-top-bar {
+        padding: 0 0 15px 15px;
+    }
+
+    .sb-account-box .sb-top-bar h2 img, .sb-super-box .sb-admin .sb-top-bar h2 img {
+        margin: 0 0 0 15px;
+    }
+
+    .sb-account-box .sb-top-bar h2, .sb-super-box .sb-admin .sb-top-bar h2 {
+        margin-right: 0;
+        margin-left: 30px;
+    }
+
+    .sb-content .banner > i {
+        right: auto;
+        left: 10px;
+    }
+
+    .sb-input .sb-btn {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+
+    .sb-tab .sb-content {
+        padding: 6px 0 50px 15px;
+    }
+
+    #membership-plans > div input + h5, .sb-admin-box .sb-bottom div + div, .sb-tab .sb-content .box-black > div > div + div {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+}
+
+.sb-nav {
+    & > .sb-btn-text {
+        position: absolute;
+        left: 15px;
+        bottom: 15px;
+        font-size: 15px;
+        font-weight: 600;
+    }
+}
+
+/*
+     
+# RESPONSIVE
+==========================================================
+
+*/
+
+@media (max-width: 464px) {
+    .sb-admin {
+        width: auto;
+        position: static;
+    }
+
+    .sb-account-box {
+        .sb-top-bar {
+            padding: 0 15px 0 15px;
+        }
+
+        > .sb-tab {
+            display: block;
+
+            > .sb-content {
+                overflow: visible;
+                width: auto;
+                padding: 20px 15px 30px 15px;
+            }
+
+            .sb-docs {
+                display: none;
+            }
+        }
+    }
+
+    .sb-nav ul, .sb-menu-wide > ul {
+        position: static !important;
+        border: none !important;
+        box-shadow: none !important;
+
+        li {
+            padding: 10px 0 10px 0 !important;
+        }
+    }
+
+    .sb-content .banner {
+        padding: 15px 40px 15px 15px;
+    }
+
+    .sb-input .sb-btn {
+        margin: 15px 0 0 0;
+    }
+
+    .box-split, .box-maso {
+        display: block;
+    }
+
+    .box-maso > div {
+        margin: 10px;
+    }
+
+    .sb-tab .sb-content {
+        .box-membership .box-black {
+            width: auto;
+        }
+
+        .box-black div {
+            line-height: 30px;
+        }
+    }
+
+    .plans-box {
+        grid-template-columns: 1fr;
+    }
+
+    .sb-account-box .sb-top-bar h2, .sb-super-box .sb-admin .sb-top-bar h2 {
+        width: 40px;
+        overflow: hidden;
+        text-indent: -9999px;
+    }
+
+    .sb-admin-box .sb-top-bar img {
+        max-width: 100%;
+    }
+}
