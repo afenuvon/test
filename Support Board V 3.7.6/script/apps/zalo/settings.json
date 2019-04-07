@@ -1,0 +1,54 @@
+[
+  {
+    "type": "multi-input",
+    "id": "zalo",
+    "title": "Synchronization",
+    "content": "Enter the Zalo details to start using it. Localhost cannot receive messages.",
+    "help": "https://board.support/docs/#zalo",
+    "value": [
+      {
+        "type": "text",
+        "id": "zalo-app-id",
+        "title": "Application ID"
+      },
+      {
+        "type": "password",
+        "id": "zalo-app-secret-key",
+        "title": "Application secret key"
+      },
+      {
+        "type": "password",
+        "id": "zalo-oa-secret-key",
+        "title": "OA secret key"
+      },
+      {
+        "type": "password",
+        "id": "zalo-token",
+        "title": "Refresh token"
+      },
+      {
+        "type": "text",
+        "id": "zalo-department-id",
+        "title": "Department ID"
+      },
+      {
+        "type": "text",
+        "title": "Tags",
+        "id": "zalo-tags"
+      },
+      {
+        "type": "button",
+        "id": "zalo-webhook",
+        "title": "Webhook URL",
+        "button-text": "Webhook URL",
+        "button-url": "#"
+      }
+    ]
+  },
+  {
+    "type": "checkbox",
+    "id": "zl-disable-chatbot",
+    "title": "Disable chatbot",
+    "content": "Disable the chatbot for this channel only."
+  }
+]
