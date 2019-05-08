@@ -1,0 +1,39 @@
+[
+  {
+    "type": "repeater",
+    "id": "telegram-numbers",
+    "title": "Synchronization",
+    "content": "Enter the bot token and click the button to synchronize the Telegram bot. Localhost cannot receive messages.",
+    "help": "https://board.support/docs/#telegram",
+    "items": [
+      {
+        "type": "password",
+        "id": "telegram-numbers-token",
+        "name": "Token"
+      },
+      {
+        "type": "text",
+        "id": "telegram-numbers-department-id",
+        "name": "Department ID"
+      },
+      {
+        "type": "text",
+        "name": "Tags",
+        "id": "telegram-numbers-tags"
+      },
+      {
+        "type": "button",
+        "id": "telegram-numbers-button",
+        "name": "Synchronize",
+        "button-text": "Synchronize now",
+        "button-url": "#"
+      }
+    ]
+  },
+  {
+    "type": "checkbox",
+    "id": "tg-disable-chatbot",
+    "title": "Disable chatbot",
+    "content": "Disable the chatbot for this channel only."
+  }
+]
