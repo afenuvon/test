@@ -1,0 +1,27 @@
+{
+  "admin": [
+    {
+      "type": "repeater",
+      "id": "cloud-switch",
+      "title": "Switch accounts",
+      "content": "Switch between accounts without having to sign out and in.",
+      "items": [
+        {
+          "type": "text",
+          "name": "Name",
+          "id": "cloud-switch-name"
+        },
+        {
+          "type": "text",
+          "name": "Email",
+          "id": "cloud-switch-email"
+        },
+        {
+          "type": "password",
+          "name": "Password",
+          "id": "cloud-switch-password"
+        }
+      ]
+    }
+  ]
+}
