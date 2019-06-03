@@ -1,0 +1,92 @@
+{
+  "id": "sb",
+  "name": "AAA",
+  "short_name": "AAA",
+  "description": "",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "background_color": "#D5E0EB",
+  "theme_color": "#D5E0EB",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "script/admin.php",
+  "scope": "script/",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "browser",
+    "fullscreen",
+    "minimal-ui"
+  ],
+  "categories": [
+    "productivity"
+  ],
+  "edge_side_panel": {
+    "preferred_width": 0
+  },
+  "prefer_related_applications": false,
+  "lang": "en",
+  "handle_links": "preferred",
+  "dir": "auto",
+  "launch_handler": {
+    "client_mode": [ "navigate-existing", "auto" ]
+  },
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.whatsapp",
+      "id": "com.whatsapp"
+    },
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.facebook.orca",
+      "id": "com.facebook.orca"
+    },
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.Slack",
+      "id": "com.Slack"
+    },
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=jp.naver.line.android",
+      "id": "jp.naver.line.android"
+    },
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.openai.chatgpt",
+      "id": "com.openai.chatgpt"
+    },
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=org.telegram.messenger",
+      "id": "org.telegram.messenger"
+    },
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.viber.voip",
+      "id": "com.viber.voip"
+    },
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=app.whmcs.mobile.android",
+      "id": "app.whmcs.mobile.android"
+    },
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.tencent.mm",
+      "id": "com.tencent.mm"
+    },
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.woocommerce.android",
+      "id": "com.woocommerce.android"
+    }
+  ]
+}
