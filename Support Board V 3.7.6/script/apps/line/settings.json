@@ -1,0 +1,44 @@
+[
+  {
+    "type": "repeater",
+    "id": "line",
+    "title": "Synchronization",
+    "content": "Enter the LINE details to start using it. Localhost cannot receive messages.",
+    "help": "https://board.support/docs/#line",
+    "items": [
+      {
+        "type": "password",
+        "id": "line-token",
+        "name": "Access token"
+      },
+      {
+        "type": "password",
+        "id": "line-secret",
+        "name": "Channel secret"
+      },
+      {
+        "type": "text",
+        "id": "line-department-id",
+        "name": "Department ID"
+      },
+      {
+        "type": "text",
+        "name": "Tags",
+        "id": "line-tags"
+      },
+      {
+        "type": "button",
+        "id": "line-webhook",
+        "name": "Webhook URL",
+        "button-text": "Webhook URL",
+        "button-url": "#"
+      }
+    ]
+  },
+  {
+    "type": "checkbox",
+    "id": "ln-disable-chatbot",
+    "title": "Disable chatbot",
+    "content": "Disable the chatbot for this channel only."
+  }
+]
